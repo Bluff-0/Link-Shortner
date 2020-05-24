@@ -10,7 +10,7 @@ def hello():
 
 @app.route("/<sht>", methods=["GET"])
 def retr(sht):
-    client = pymongo.MongoClient("mongodb+srv://test:test@cluster0-fvejx.gcp.mongodb.net/test?retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb+srv://username:password@cluster0-fvejx.gcp.mongodb.net/test?retryWrites=true&w=majority")
     collection = client.get_database('Shortner')
     db= collection.URL
     for i in db.find({"Short":"http://127.0.0.1:60000/"+str(sht)}):
